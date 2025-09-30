@@ -3,6 +3,8 @@ import ProductCard from "../components/productCard";
 import ProductSidebar from "../components/productSideBar";
 import '../styles/components.css';
 
+const API_URL = import.meta.env.VITE_API_URL;
+
 function Marketplace() {
     const [products, setProducts] = useState([]);
     const [filtered, setFiltered] = useState([]);
@@ -16,7 +18,7 @@ function Marketplace() {
 
     // Fetch products from Flask backend
     useEffect(() => {
-        fetch("http://127.0.0.1:5000/api/products")
+        fetch(`${API_URL}/products`)
             .then((res) => res.json())
             .then((data) => {
                 const normalized = data.map((item) => ({
