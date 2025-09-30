@@ -27,7 +27,7 @@ function ProductCard({ product, inCart, onAddToCart, onRemoveFromCart }) {
             <p>{description}</p>
             <div className="product-details">
                 <p><strong>Location:</strong> {location}</p>
-                {contact && typeof contact === "string" && contact.trim() !== "" && (
+                {contact && typeof contact === "string" || typeof contact === "number" && contact.trim() !== "" && (
                     <p><strong>Contact:</strong> {contact}</p>
                 )}
             </div>
