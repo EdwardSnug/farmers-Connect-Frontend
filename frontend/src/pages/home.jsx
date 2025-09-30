@@ -24,7 +24,7 @@ function Home() {
                 <hr />
                 <ul className="resources-list">
                     <li><Link to="/planner">Seasonal Crop Planner</Link></li>
-                    <li><a href="/path/to/resource2">Farmer's Blog</a></li>
+                    {/* <li><a href="/path/to/resource2">Farmer's Blog</a></li> */}
                 </ul>
             </div>
         </div>

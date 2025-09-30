@@ -284,28 +284,29 @@ function ProductForm({ initialData = null, onSubmit, onCancel }) {
         )}
       </div>
 
-      <button type="submit" disabled={loading}>
-        {loading
-          ? initialData
-            ? "Updating..."
-            : "Posting..."
-          : initialData
-          ? "Update Product"
-          : "Add Product"}
-      </button>
-
-      {initialData && (
-        <button
-          type="button"
-          onClick={() => {
-            if (onCancel) onCancel();
-            resetForm();
-          }}
-          style={{ marginLeft: 10 }}
-        >
-          Cancel
+      <div style={{ display: "flex", gap: "10px", marginTop: "16px" }}>
+        <button type="submit" disabled={loading}>
+          {loading
+            ? initialData
+              ? "Updating..."
+              : "Posting..."
+            : initialData
+            ? "Update Product"
+            : "Add Product"}
         </button>
-      )}
+
+        {initialData && (
+          <button
+            type="button"
+            onClick={() => {
+              if (onCancel) onCancel();
+              resetForm();
+            }}
+          >
+            Cancel
+          </button>
+        )}
+      </div>
     </form>
   );
 }

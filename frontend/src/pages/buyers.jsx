@@ -94,9 +94,11 @@ function Marketplace() {
                 <div className="marketplace-header">
                     <h2 className="marketplace-heading">Browse Available Produce</h2>
 
-                    {/* Cart count icon */}
-                    <div className="cart-icon">
-                        🛒 <span className="cart-count">{cart.length}</span>
+                    {/* Centered and larger cart icon */}
+                    <div className="cart-icon-container">
+                        <div className="cart-icon">
+                            🛒 <span className="cart-count">{cart.length}</span>
+                        </div>
                     </div>
                 </div>
 

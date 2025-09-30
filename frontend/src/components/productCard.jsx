@@ -11,6 +11,7 @@ function ProductCard({ product, inCart, onAddToCart, onRemoveFromCart }) {
         location,
         image,
         unit,
+        contact,
     } = product;
 
     return (
@@ -26,6 +27,7 @@ function ProductCard({ product, inCart, onAddToCart, onRemoveFromCart }) {
             <p>{description}</p>
             <div className="product-details">
                 <p><strong>Location:</strong> {location}</p>
+                <p><strong>Contact:</strong> {contact}</p>
             </div>
 
             <div className="product-card-actions">

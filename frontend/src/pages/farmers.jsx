@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import FarmersSearchBar from "../components/farmersSearchBar";
 import ProductForm from "../components/productForm";
 import FarmersCard from "../components/farmersCard";
 import Sidebar from "../components/sidebar";
