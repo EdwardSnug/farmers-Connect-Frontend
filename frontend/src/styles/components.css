@@ -1,0 +1,579 @@
+/* Header.jsx */
+
+.App-header {
+    background-color: #7ED957;
+    height: 100px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
+    border-radius: 20px 20px 0 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.App-logo {
+    height: 40px;
+    pointer-events: none;
+    margin-left: 20px;
+}
+
+.user-section {
+    display: flex;
+    align-content: center;
+    margin-right: 20px;
+}
+
+.user-section a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+    margin-left: 20px;
+}
+
+.user-section img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.user-dropdown {
+    position: absolute;
+    max-width: 150px;
+    min-width: 100px;
+    top: 60px;
+    right: 10px;
+    background-color: white;
+    color: #333;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 5px;
+}
+
+.user-dropdown span {
+    display: block;
+    padding: 5px 0;
+    font-size: 1rem;
+}
+
+.logout-btn {
+    background-color: #009f52;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    margin-right: 20px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    border-bottom: white solid 2px;
+    padding: 3px;
+}
+
+.nav-links a:hover,
+.nav-links a:active {
+    border: white solid 2px;
+    transition: border 0.3s ease-in-out;
+}
+
+
+/* Homepage */
+
+.home-container {
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.sidebar {
+    flex-basis: 20%;
+    flex-grow: 0.01;      /* Allows sidebar to grow if space is available */
+    background-color: #f0fbeb;
+    padding: 20px;
+    border-radius: 20px;
+}
+.main-content {
+    flex-basis: 80%;
+    flex-grow: 3;      /* Main content grows more than sidebar */
+    background-color: #DAFFDE;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+}
+
+hr {
+    border: none;
+    background-color: #0ac063;
+    height: 3px;
+}
+
+.homepage-logo {
+    color: #00BF63;
+    height: 80px;
+    margin-bottom: 20px;
+}
+.homepage-query {
+    background-color: #E9FFCD;
+    padding: 50px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    border-radius: 20px;
+}
+
+.homepage-query h3 {
+    color: #55C227;
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    margin-bottom: 20px;
+}
+.buttons-container {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    justify-content: center;
+}
+.query-button1 {
+    background-color: #009f52;
+    color: white;
+    padding: 10px 30px;
+    border: 2px solid #009f52;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+.query-button1:hover {
+    background-color: white;
+    color: #009f52;
+    transition: background-color 0.3s ease-in-out;
+}
+.query-button2 {
+    background-color: white;
+    color: #009f52;
+    padding: 10px 30px;
+    border: 2px solid #009f52;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+.query-button2:hover {
+    background-color: #009f52;
+    color: white;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.resources-list li {
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+    color: #009f52;
+}
+.resources-list a {
+    color: #009f52;
+    text-decoration: none;
+}
+.resources-list a:hover {
+    text-decoration: underline;
+}
+
+/* Login & Register Pages */
+.login-container,
+.register-container {
+    max-width: 400px;
+    margin: 40px auto;
+    background: #fff;
+    padding: 40px 30px 30px 30px;
+    border-radius: 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.signup-logo {
+    width: 400px;
+    margin-bottom: 20px;
+}
+.login-form,
+.register-form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.login-form input,
+.register-form input {
+    padding: 12px;
+    border: 2px solid #7ED957;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    outline: none;
+    background: #f9f9f9;
+    transition: border 0.2s;
+}
+
+.login-form input:focus,
+.register-form input:focus {
+    border-color: #009f52;
+}
+
+.login-form button,
+.register-form button,
+.google-btn {
+    width: auto;
+    min-width: 140px;
+    display: inline-block;
+    padding: 15px 24px;
+    margin: 0 auto;
+    background-color: #009f52;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    font-weight: bold;
+    transition: background 0.3s, color 0.3s;
+    text-align: center;
+}
+
+.login-form button:hover,
+.register-form button:hover,
+.google-btn:hover {
+    background-color: #7ED957;
+    color: #009f52;
+}
+
+.login-form .google-btn,
+.register-form .google-btn {
+    background: #fff;
+    color: #009f52;
+    border: 2px solid #009f52;
+    margin-top: 5px;
+}
+
+.login-form .google-btn:hover,
+.register-form .google-btn:hover {
+    background: #009f52;
+    color: #fff;
+}
+
+.error {
+    color: #d32f2f;
+    background: #ffeaea;
+    padding: 8px 12px;
+    border-radius: 8px;
+    margin-top: 5px;
+    text-align: center;
+    font-size: 1rem;
+}
+
+.success {
+    color: #009f52;
+    background: #eaffea;
+    padding: 8px 12px;
+    border-radius: 8px;
+    margin-top: 5px;
+    text-align: center;
+    font-size: 1rem;
+}
+
+/* Buyers & Farmers Marketplace Pages */
+
+.marketplace-heading,
+.farmershub-heading {
+    color: #009f52;
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.marketplace-layout,
+.farmershub-layout {
+    display: flex;
+    gap: 30px;
+}
+
+.marketplace-content,
+.farmershub-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.product-grid,
+.farmer-product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 24px;
+    margin-top: 20px;
+}
+
+.product-card,
+.farmer-product-card {
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    transition: box-shadow 0.2s;
+}
+
+.product-card:hover,
+.farmer-product-card:hover {
+    box-shadow: 0 4px 16px rgba(0,191,99,0.12);
+}
+
+.product-card img,
+.farmer-product-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.price {
+    color: black;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.price-quantity {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    border-bottom: #009f52 solid 1px;
+    margin-bottom: 10px;
+}
+
+.unit {
+    color: #555;
+    font-size: 0.9rem;
+}
+
+.product-card h3,
+.farmer-product-card h3 {
+    color: #009f52;
+    font-size: 1.3rem;
+    display: inline;
+    align-content: space-between;
+
+}
+
+.product-card p,
+.farmer-product-card p {
+    color: #333;
+    font-size: 1rem;
+    margin: 5px 0;
+}
+
+.product-details {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+    border-top: #009f52 solid 1px;
+    flex: 1;
+    width: 100%;
+}
+
+.no-products-message {
+    color: #d32f2f;
+    text-align: center;
+    font-size: 1.2rem;
+    margin-top: 30px;
+}
+
+.contact-button,
+.product-card-actions button {
+    background-color: #009f52;
+    color: white;
+    padding: 10px 20px;
+    margin-right: 20px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: background 0.3s, color 0.3s;
+}
+
+.product-card-actions button:hover,
+.contact-button:hover {
+    background-color: #7ED957;
+    color: #009f52;
+}
+
+/* Filter & SearchBar */
+.filter-container,
+.searchbar-container {
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    padding: 20px;
+    margin-bottom: 20px;
+    min-width: 220px;
+}
+
+.filter-container select,
+.searchbar-container input {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #7ED957;
+    border-radius: 8px;
+    font-size: 1rem;
+    margin-top: 8px;
+    outline: none;
+    background: #f9f9f9;
+    transition: border 0.2s;
+}
+
+.filter-container select:focus,
+.searchbar-container input:focus {
+    border-color: #009f52;
+}
+
+/* Add to components.css */
+.market-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 8px;
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 1px 4px rgba(0,191,99,0.08);
+    translate: -15px;
+}
+.market-table th, .market-table td {
+    padding: 4px;
+    border-bottom: 1px solid #e0e0e0;
+    text-align: left;
+    font-size: 0.7rem;
+}
+.market-table th {
+    background: #7ED957;
+    color: #fff;
+    font-weight: bold;
+}
+.market-table tr:last-child {
+    border-bottom: none;
+}
+
+.product-sidebar input,
+.product-sidebar select {
+    margin-top: 4px;
+    margin-bottom: 8px;
+    padding: 8px;
+    border-radius: 8px;
+    border: 1.5px solid #7ED957;
+    font-size: 1rem;
+}
+/* Add or update in components.css for ProductForm styling */
+.product-form {
+    background: #fff;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0,191,99,0.08);
+    display: flex;
+    flex-direction: column;
+}
+
+.product-form label {
+    font-size: 1rem;
+    color: #7ED957;
+    font-weight: bold;
+    margin-bottom: 4px;
+}
+
+.product-form-container {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    justify-items: stretch;
+}
+
+.product-form-fields {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    margin-bottom: 20px;
+}
+
+.product-form-description {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.text-input {
+    padding: 12px;
+    border: 2px solid #7ED957;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    outline: none;
+    background: #f9f9f9;
+    transition: border 0.2s;
+}
+
+.text-input:focus {
+    border-color: #009f52;
+}
+
+.file-upload {
+    padding: 12px;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    outline: none;
+    background: #f9f9f9;
+    transition: border 0.2s;
+}
+
+.product-form button {
+    background-color: #009f52;
+    color: white;
+    padding: 10px 24px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    font-weight: bold;
+    align-self: flex-end;
+    transition: background 0.3s, color 0.3s;
+    width: auto;
+    min-width: 140px;
+}
+
+.product-form button:hover {
+    background-color: #7ED957;
+    color: #009f52;
+}
