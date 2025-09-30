@@ -4,6 +4,8 @@ import ProductForm from "../components/productForm";
 import FarmersCard from "../components/farmersCard";
 import Sidebar from "../components/sidebar";
 
+const API_URL = import.meta.env.VITE_API_URL; // Add this line
+
 function Farmers() {
   const [products, setProducts] = useState([]);
   const [editingProduct, setEditingProduct] = useState(null);
@@ -14,11 +16,15 @@ function Farmers() {
     async function fetchProducts() {
       try {
         const res = await fetch(`${API_URL}/products`);
+        if (!res.ok) {
+          throw new Error(`HTTP error! status: ${res.status}`);
+        }
         const data = await res.json();
-        // Set all products without filtering
+        console.log("Fetched products:", data); // Add this for debugging
         setProducts(data);
       } catch (err) {
         console.error("Error fetching products:", err);
+        alert("Failed to fetch products");
       } finally {
         setLoading(false);
       }
