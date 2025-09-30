@@ -32,25 +32,11 @@ function Farmers() {
     fetchProducts();
   }, []);
 
-  const canModifyProduct = (product) => {
-    const currentUser = auth.currentUser;
-    return currentUser && product.posted_by === currentUser.email;
-  };
-
   const handleEdit = (product) => {
-    if (!canModifyProduct(product)) {
-      alert("You can only edit your own products!");
-      return;
-    }
     setEditingProduct(product);
   };
 
-  const handleDelete = async (id, postedBy) => {
-    if (!canModifyProduct({ posted_by: postedBy })) {
-      alert("You can only delete your own products!");
-      return;
-    }
-
+  const handleDelete = async (id) => {
     try {
       const response = await fetch(`${API_URL}/products/${id}`, {
         method: "DELETE",
@@ -91,20 +77,19 @@ function Farmers() {
           onSubmit={handleSubmit}
           onCancel={() => setEditingProduct(null)}
         />
-        <h1>All Products</h1>
+        <h1>Your Products</h1>
         <div className="farmer-product-grid">
           {loading ? (
-            <p>Loading products...</p>
+            <p>Loading your products...</p>
           ) : products.length === 0 ? (
-            <p>No products available.</p>
+            <p>You haven't posted any products yet.</p>
           ) : (
             products.map((product) => (
               <FarmersCard
                 key={product.id}
                 product={product}
                 onEdit={() => handleEdit(product)}
-                onDelete={() => handleDelete(product.id, product.posted_by)}
-                showActions={canModifyProduct(product)}
+                onDelete={() => handleDelete(product.id)}
               />
             ))
           )}
