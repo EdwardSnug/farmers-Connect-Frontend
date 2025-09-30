@@ -13,18 +13,10 @@ function Farmers() {
   useEffect(() => {
     async function fetchProducts() {
       try {
-        const currentUser = auth.currentUser;
-        if (!currentUser) return;
-
         const res = await fetch(`${API_URL}/products`);
         const data = await res.json();
-
-        // Filter products to only show those posted by current user
-        const userProducts = data.filter(
-          (product) => product.posted_by === currentUser.email
-        );
-
-        setProducts(userProducts);
+        // Set all products without filtering
+        setProducts(data);
       } catch (err) {
         console.error("Error fetching products:", err);
       } finally {
