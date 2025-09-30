@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { auth } from "../api/firebase"; 
 
+const API_URL = import.meta.env.VITE_API_URL;
+
 function ProductForm({ initialData = null, onSubmit, onCancel }) {
   const [id, setId] = useState(initialData ? initialData.id : "");
   const [productName, setProductName] = useState("");
@@ -127,7 +129,7 @@ function ProductForm({ initialData = null, onSubmit, onCancel }) {
       if (initialData && initialData.id) {
         // UPDATE
         response = await fetch(
-          `http://127.0.0.1:5000/api/products/${initialData.id}`,
+          `${API_URL}/products/${initialData.id}`,
           {
             method: "PUT",
             headers: { "Content-Type": "application/json" },
@@ -136,7 +138,7 @@ function ProductForm({ initialData = null, onSubmit, onCancel }) {
         );
       } else {
         // CREATE
-        response = await fetch("http://127.0.0.1:5000/api/products", {
+        response = await fetch(`${API_URL}/products`, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(productData),
